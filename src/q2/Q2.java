@@ -82,12 +82,17 @@ public class Q2 {
         
         String[] testCasePart;
         String commandType;
+        String[] wtestCasePart;
+         String wcommandType;
         Word nw = null;
         WordClass nwc;
         
+         
         for(String testCase : testCaseList){
            testCasePart = testCase.split(";");
            commandType = testCasePart[0];
+           wtestCasePart = testCase.split(" ");
+            wcommandType = wtestCasePart[0]; 
            switch (commandType){
                
                case "AddWordClass": {
@@ -116,21 +121,29 @@ public class Q2 {
                    
                    break;
                }
+                
+              
+           
                case "PrintWord" : {
                    S.add("---Words---\n");
                   for (Word S1 : w){
                       S.add(S1.print());
                   }
-                  S.add("---");
+                  S.add("---\n");
+                   
                   break;
                }
-               case "SearchWord": {
+           }
+           switch(wcommandType){
+                    case "SearchWord" : {
                    int a = 0;
+                       
                    S.add("---Search Result---\n");
                   for (Word S1 : w){
-                      if(testCasePart[1].equals(S1.getWord())){
+                      if(wtestCasePart[1].equals(S1.getWord())){
                           S.add(S1.print());
                           a = 1;
+                          S.add("---\n");
                           break;
                       }else {
                           a = 0;
@@ -138,9 +151,11 @@ public class Q2 {
                     }
                   if(a==0){
                       S.add("Not found\n");
+                      S.add("---\n");
                   }
+                                 break;
                        }
-               break;
+
            }
            }
        

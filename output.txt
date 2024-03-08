@@ -4,7 +4,10 @@ v-verb is inserted
 n-noun
 v-verb
 ---
-schoolis inserted
+school is inserted
 ---Words---
+school(noun): truong hoc
+---
+---Search Result---
 school(noun): truong hoc
 ---

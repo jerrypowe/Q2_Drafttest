@@ -42,7 +42,7 @@ public class Word {
     }
     
     public String  entry() {
-        return this.word + "is inserted\n";
+        return this.word + " is inserted\n";
     }
     public String print(){
         return this.word +"(" + this.wordclass.getName()+"): "+this.definition+"\n";
