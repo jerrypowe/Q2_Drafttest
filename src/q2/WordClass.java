@@ -40,10 +40,10 @@ public class WordClass {
     
 
     public String  entry() {
-        return this.id +"-" + this.name + " is inserted";
+        return this.id +"-" + this.name + " is inserted\n";
     }
     public String print(){
-        return this.id + "-" + this.name;
+        return this.id + "-" + this.name + "\n";
     }
     
 }

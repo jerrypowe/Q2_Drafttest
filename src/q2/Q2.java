@@ -82,7 +82,7 @@ public class Q2 {
         
         String[] testCasePart;
         String commandType;
-        Word nw;
+        Word nw = null;
         WordClass nwc;
         
         for(String testCase : testCaseList){
@@ -97,17 +97,19 @@ public class Q2 {
                    break;
                }
                case "PrintWordClass": {
-                   S.add("---WordClasses---");
+                   S.add("---WordClasses---\n");
                    for (WordClass S2 : wc){
                        S.add(S2.print());
                    }
-                   S.add("---");
+                   S.add("---\n");
                    break;
                }
                case "AddWord" : {
-                   for (int i = 0 ; i < w.size(); i++){
-                       if (testCasePart[3] == w.get(i).getWordclass().getName()){
-                           nw = new Word(testCasePart[1], testCasePart[2],w.get(i).getWordclass());
+                   for (int i = 0 ; i < wc.size(); i++){
+                       if (wc.get(i).getId().equals(testCasePart[3])){
+                           
+                           nw = new Word(testCasePart[1], testCasePart[2],wc.get(i));
+                           w.add(nw);
                            S.add(nw.entry());
                        }
                    }
@@ -115,11 +117,30 @@ public class Q2 {
                    break;
                }
                case "PrintWord" : {
-                   S.add("---Word---");
+                   S.add("---Words---\n");
                   for (Word S1 : w){
                       S.add(S1.print());
                   }
+                  S.add("---");
+                  break;
                }
+               case "SearchWord": {
+                   int a = 0;
+                   S.add("---Search Result---\n");
+                  for (Word S1 : w){
+                      if(testCasePart[1].equals(S1.getWord())){
+                          S.add(S1.print());
+                          a = 1;
+                          break;
+                      }else {
+                          a = 0;
+                      }
+                    }
+                  if(a==0){
+                      S.add("Not found\n");
+                  }
+                       }
+               break;
            }
            }
        
@@ -143,7 +164,7 @@ public class Q2 {
                     fw.write(S1);
                 }
            
-
+                
 
 
 	//--FIXED PART - DO NOT EDIT ANY THINGS HERE--

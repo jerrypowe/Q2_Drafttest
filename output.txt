@@ -1,1 +1,10 @@
 n-noun is inserted
+v-verb is inserted
+---WordClasses---
+n-noun
+v-verb
+---
+schoolis inserted
+---Words---
+school(noun): truong hoc
+---
